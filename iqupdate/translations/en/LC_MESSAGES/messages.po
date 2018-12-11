@@ -1,0 +1,60 @@
+# English translations for .
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the  project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  V0.1\n"
+"Report-Msgid-Bugs-To: Xiangsu.chen@apis.de\n"
+"POT-Creation-Date: 2018-12-11 11:25+0100\n"
+"PO-Revision-Date: 2018-12-11 11:34+0100\n"
+"Last-Translator: Xiangsu Chen <Xiangsu.chen@apis.de>\n"
+"Language: en\n"
+"Language-Team: en <Xiangsu.chen@apis.de>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: iq_update.py:195
+msgid "Back"
+msgstr ""
+
+#: templates/403.html:2
+msgid "Forbidden"
+msgstr ""
+
+#: templates/404.html:2
+msgid "Page Not Found"
+msgstr ""
+
+#: templates/500.html:2
+msgid "Internal Server Error"
+msgstr ""
+
+#: templates/service_packs.html:6
+msgid "Service Pack"
+msgstr ""
+
+#: templates/service_packs.html:7
+msgid "Date"
+msgstr ""
+
+#: templates/service_packs.html:8
+msgid "Informations"
+msgstr ""
+
+#: templates/service_packs.html:9
+msgid "Download"
+msgstr ""
+
+#: templates/service_packs.html:17
+msgid "Service Pack Info"
+msgstr ""
+
+#: templates/service_packs.html:18
+msgid "Download and install the service pack"
+msgstr ""
+

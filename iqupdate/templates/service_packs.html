@@ -1,0 +1,29 @@
+<html>
+<body>
+<table width="100%">
+    <thead>
+    <tr>
+        <th style="border-bottom: solid 3px #000000;">{{ _('Service Pack') }}</th>
+        <th style="border-bottom: solid 3px #000000;">{{ _('Date') }}</th>
+        <th style="border-bottom: solid 3px #000000;">{{ _('Informations') }}</th>
+        <th style="border-bottom: solid 3px #000000;">{{ _('Download') }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for sp in service_packs %}
+        <tr>
+            <td style="border-bottom: dashed 1px #000000;">{{ sp.description }}</td>
+            <td style="border-bottom: dashed 1px #000000;" align="center">{{ sp.release_date }}</td>
+            <td style="border-bottom: dashed 1px #000000;" align="center"><a
+                    href="/iq7/v1/updates/{{ sp.version_number }}">{{ _('Service Pack Info') }}</a></td>
+            <td style="border-bottom: dashed 1px #000000;" align="center">
+                {% if sp.version_number == newest_version_number %}
+                    <button>{{ _('Download and install the service pack') }}</button>
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>

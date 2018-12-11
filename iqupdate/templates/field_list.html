@@ -1,0 +1,13 @@
+{% import 'admin/model/inline_list_base.html' as base with context %}
+
+{% macro render_field(field) %}
+    {% set detail = field.object_data %}
+    {% if detail and detail.service_pack_id %}
+        <b>language: </b>{{ detail.language }}<br>
+        <b>contents: </b>{{ detail.contents }}
+    {% else %}
+        {{ field }}
+    {% endif %}
+{% endmacro %}
+
+{{ base.render_inline_fields(field, template, render_field) }}

@@ -1,0 +1,4 @@
+-r common.txt
+coverage==3.7.1
+pytest==2.9.2
+selenium==2.45.0
