@@ -1,18 +1,19 @@
 from flask_security import Security, SQLAlchemyUserDatastore
 from flask_security.utils import hash_password
 from datetime import datetime
-from iqupdate.db_object import Role, User, ServicePack, ServicePackDetail
-from iqupdate import app as application
-from iqupdate import db as database
+from iqupdate.models import Role, User, ServicePack, ServicePackDetail
+from iqupdate import create_app, db as database
+from config import Config
 
-# Setup Flask-Security
-user_datastore = SQLAlchemyUserDatastore(database, User, Role)
-security = Security(application, user_datastore)
-
+application = create_app(Config)
+application.app_context().push()
 
 def build_sample_db():
     database.drop_all()
     database.create_all()
+    # Setup Flask-Security
+    user_datastore = SQLAlchemyUserDatastore(database, User, Role)
+    Security(application, user_datastore)
     with application.app_context():
         if len(User.query.all()) == 0:
             release_user_role = Role(name='releaseuser')

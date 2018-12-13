@@ -2,7 +2,7 @@ from flask import url_for, redirect, request, abort
 from flask_security import current_user
 from flask_admin.contrib import sqla
 from iqupdate import db as database
-from iqupdate.db_object import ServicePack, ServicePackDetail
+from iqupdate.models import ServicePack, ServicePackDetail
 
 
 # Create customized model view class
