@@ -6,6 +6,7 @@ from iqupdate import create_app, db as database
 from config import Config
 
 application = create_app(Config)
+# http://flask-sqlalchemy.pocoo.org/2.3/contexts/
 # http://flask.pocoo.org/docs/1.0/appcontext/#creating-an-application-context
 application.app_context().push()
 
