@@ -3,22 +3,13 @@ from flask_security import Security, SQLAlchemyUserDatastore
 import flask_admin
 from flask_admin import helpers as admin_helpers
 from flask_babelex import lazy_gettext as _
-from iqupdate import app as application
+from iqupdate import create_app
 from iqupdate import db as database
-from iqupdate import babel
-from iqupdate.db_object import Role, User, ServicePack, ServicePackDetail
-from iqupdate.view_object import MyModelView, ServicePackAdmin
+from iqupdate.models import Role, User, ServicePack, ServicePackDetail
+from iqupdate.forms import MyModelView, ServicePackAdmin
+from config import Config
 
-
-@babel.localeselector
-def get_locale():
-    """
-    Get the local language from user's browser.
-    :return: A list with ['en', 'zh', 'de', 'fr']
-    """
-    return request.accept_languages.best_match(['de', 'fr', 'en', 'zh'])
-
-
+application = create_app(Config)
 # Setup Flask-Security
 user_datastore = SQLAlchemyUserDatastore(database, User, Role)
 security = Security(application, user_datastore)
@@ -65,7 +56,7 @@ def service_pack_info_view(version_number):
 
 
 @application.errorhandler(403)
-def forbidden(arg1):
+def forbidden(error):
     """
     render to 403.html
     :return:
@@ -74,20 +65,22 @@ def forbidden(arg1):
 
 
 @application.errorhandler(404)
-def page_not_found(arg1):
+def page_not_found(error):
     """
     render to 404.html
     :return:
     """
+    application.logger.info('404 Error')
     return render_template('404.html'), 404
 
 
 @application.errorhandler(500)
-def internal_server_error(arg1):
+def internal_server_error(error):
     """
     render to 500.html
     :return:
     """
+    database.session.rollback()
     return render_template('500.html'), 500
 
 
