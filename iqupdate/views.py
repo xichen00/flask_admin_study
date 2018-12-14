@@ -34,9 +34,7 @@ def init_views(application):
     @application.route('/iq7/v1/updates/<version_number>')
     def service_pack_info_view(version_number):
         # Czech Deutsch English Spanish French Italian Hungarian Korean Chinese(Taiwan) Chinese(Simplified) Japanese
-        # cs    de      en      es      fr     it      hu        ko     zh-TW           zh-CN               ja
-        print('++++++++++++++++++++language code: ' + request.accept_languages.best_match(
-            ['cs', 'de', 'en', 'es', 'fr', 'it', 'hu', 'ko', 'zh_TW', 'zh', 'ja']) + '++++++++++++++++++++')
+        # cs    de      en      es      fr     it      hu        ko     zh_tw           zh                  ja
         language = request.args.get('language')
         if language is None:
             language = request.accept_languages.best_match(
