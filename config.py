@@ -23,4 +23,4 @@ class Config(object):
     BABEL_DEFAULT_LOCALE = 'en'
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
-    LANGUAGES = ['de', 'fr', 'en', 'zh']
+    LANGUAGES = ['cs', 'de', 'en', 'es', 'fr', 'it', 'hu', 'ko', 'zh_tw', 'zh', 'ja']

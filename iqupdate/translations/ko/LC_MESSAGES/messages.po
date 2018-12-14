@@ -1,0 +1,60 @@
+# Korean translations for .
+# Copyright (C) 2018 ORGANIZATION
+# This file is distributed under the same license as the  project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2018.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version:  V0.1\n"
+"Report-Msgid-Bugs-To: Xiangsu.chen@apis.de\n"
+"POT-Creation-Date: 2018-12-11 11:25+0100\n"
+"PO-Revision-Date: 2018-12-14 11:49+0100\n"
+"Last-Translator: Xiangsu Chen <Xiangsu.chen@apis.de>\n"
+"Language: ko\n"
+"Language-Team: ko <Xiangsu.chen@apis.de>\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: iq_update.py:195
+msgid "Back"
+msgstr "뒤로"
+
+#: templates/403.html:2
+msgid "Forbidden"
+msgstr "금지 된"
+
+#: templates/404.html:2
+msgid "Page Not Found"
+msgstr "페이지를 찾을 수 없음"
+
+#: templates/500.html:2
+msgid "Internal Server Error"
+msgstr "인터넷 서버 오류"
+
+#: templates/service_packs.html:6
+msgid "Service Pack"
+msgstr "서비스 팩"
+
+#: templates/service_packs.html:7
+msgid "Date"
+msgstr "날짜"
+
+#: templates/service_packs.html:8
+msgid "Informations"
+msgstr "정보들"
+
+#: templates/service_packs.html:9
+msgid "Download"
+msgstr "다운로드"
+
+#: templates/service_packs.html:17
+msgid "Service Pack Info"
+msgstr "서비스 팩 정보"
+
+#: templates/service_packs.html:21
+msgid "Download and install the service pack"
+msgstr "서비스 팩을 다운로드하고 설치함"
+
