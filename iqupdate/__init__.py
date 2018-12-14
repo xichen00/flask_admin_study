@@ -10,9 +10,11 @@ db = SQLAlchemy()
 babel = Babel()
 
 
-def create_app(config_class=Config):
-    app = Flask(__name__)
+def create_app(config_class=Config, debug=None, testing=None):
+    app = Flask(__name__, instance_relative_config=True)
     app.config.from_object(config_class)
+    if testing:
+        app.config['TESTING'] = True
     db.init_app(app)
     babel.init_app(app)
     if not app.debug and not app.testing:
