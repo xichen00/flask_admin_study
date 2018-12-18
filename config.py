@@ -1,9 +1,10 @@
 class Config(object):
     # Create dummy secrey key so we can use sessions
+    SQLALCHEMY_DATABASE_URI = 'mysql://iqupdate:iqupdate@localhost:3306/iqupdate'
+    TESTING = False
     SECRET_KEY = 'This is a secret key for IQUpdate@Apis'
 
     # Create in-memory database
-    SQLALCHEMY_DATABASE_URI = 'mysql://xichen00:6DCzRR00@localhost:3306/iqupdate'
     SQLALCHEMY_ECHO = True
     SQLALCHEMY_TRACK_MODIFICATIONS = True
 
@@ -24,3 +25,9 @@ class Config(object):
     BABEL_DEFAULT_TIMEZONE = 'UTC'
 
     LANGUAGES = ['cs', 'de', 'en', 'es', 'fr', 'it', 'hu', 'ko', 'zh_tw', 'zh', 'ja']
+
+    def __init__(self, testing=None, uri=None):
+        if uri:
+            self.SQLALCHEMY_DATABASE_URI = uri
+        if testing:
+            self.TESTING = testing
